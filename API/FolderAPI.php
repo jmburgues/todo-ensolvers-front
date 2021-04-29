@@ -54,6 +54,21 @@ class FolderAPI{
           $response = json_decode( $result );
         return $response;
     }
+
+    public function appendToFolder($idFolder,$idTask){
+
+        $options = array('http' =>
+        array(
+            'method'  => 'PUT',
+            'header'  => 'Content-type: application/x-www-form-urlencoded'
+            )
+        );
+    
+          $context  = stream_context_create( $options );
+          $result = file_get_contents(API_URL."/folder/".$idFolder."/task/".$idTask, false, $context );
+          $response = json_decode( $result );
+        return $response;
+    }
 }
 
 ?>

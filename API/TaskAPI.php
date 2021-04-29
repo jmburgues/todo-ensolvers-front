@@ -34,6 +34,22 @@ class TaskAPI{
       
       return $tasksObjects;
     }
+
+    public function add($data){
+      $options = array(
+          'http' => array(
+            'method'  => 'POST',
+            'content' => json_encode( $data ),
+            'header'=>  "Content-Type: application/json\r\n" .
+                        "Accept: application/json\r\n"
+            )
+        );
+        
+        $context  = stream_context_create( $options );
+        $result = file_get_contents(API_URL."/task", false, $context );
+        $response = json_decode( $result );
+      return $response;
+  }
 }
 
 ?>
