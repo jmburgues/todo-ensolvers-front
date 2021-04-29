@@ -1,0 +1,22 @@
+.folder{
+    border-style: solid;
+    margin: 1% 1% 1% 1%;
+    padding: 1% 1% 1% 1%;
+    height:40%;
+    width: 40%;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: large;
+}
+
+.list{
+    line-height: 40%;
+}
+table
+{
+  width:100%;
+  margin-bottom: 30px;
+}
+.submit{
+    display: inline;
+    margin-left: 4%;
+}
