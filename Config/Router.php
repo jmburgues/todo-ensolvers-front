@@ -27,7 +27,7 @@
                     call_user_func_array(array($controller, $methodName), $methodParameters);
             }
             else{
-                // requiere error.php
+                require_once(VIEWS_PATH."error.php");
             }
         }
     }

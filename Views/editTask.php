@@ -9,4 +9,7 @@
     <input type="text" id="description" maxlength="50" name="description" value="<?=$task->getDescription()?>" required>
     <input type="submit" name="submit" value="Edit">
   </form>
+    <button onclick="window.location.href='<?=FRONT_ROOT?>/Folder/view/<?=$folderId?>'">Cancel</button>
+
+
 </div>
