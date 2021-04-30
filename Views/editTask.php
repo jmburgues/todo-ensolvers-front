@@ -7,9 +7,9 @@
     <input type="hidden" id="done" name="done" value="<?=$task->getDone()?>">
     <input type="hidden" id="folderId" name="folderId" value="<?=$folderId?>">
     <input type="text" id="description" maxlength="50" name="description" value="<?=$task->getDescription()?>" required>
-    <input type="submit" name="submit" value="Edit">
+    <button>Edit</button>
   </form>
-    <button onclick="window.location.href='<?=FRONT_ROOT?>/Folder/view/<?=$folderId?>'">Cancel</button>
+    <button onclick="window.location.href='<?=FRONT_ROOT?>Folder/view/<?=$folderId?>'">Cancel</button>
 
 
 </div>
