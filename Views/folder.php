@@ -20,7 +20,7 @@
 
   <form class="submit" action="<?=FRONT_ROOT?>Task/add" method=POST>
     <input type="hidden" name="folderId" value="<?=$folder->getId();?>">
-    <input type="text" maxlength="50" name="description" placeholder="New Task" id="description" required>
+    <input type="text" maxlength="50" name="description" placeholder="New Task" id="description" autofocus required>
     <button>Add</button>
   </form>
 </div>
