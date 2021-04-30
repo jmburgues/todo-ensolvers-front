@@ -66,7 +66,8 @@ class TaskController{
         $data = array();
         $data["id"] = $id;
         $data["description"] = $description;
-        $data["done"] = (isset($done)) ? $done : 0;
+
+        $data["done"] = ($done == 1) ? 1 : 0;
 
         $this->TaskAPI->update($data);
 
