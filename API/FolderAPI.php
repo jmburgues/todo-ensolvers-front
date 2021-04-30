@@ -69,6 +69,20 @@ class FolderAPI{
           $response = json_decode( $result );
         return $response;
     }
+
+    public function remove($idFolder){
+        $options = array('http' =>
+        array(
+            'method'  => 'DELETE',
+            'header'  => 'Content-type: application/x-www-form-urlencoded'
+            )
+        );
+    
+          $context  = stream_context_create( $options );
+          $result = file_get_contents(API_URL."/folder/".$idFolder, false, $context );
+          $response = json_decode( $result );
+        return $response;
+    }
 }
 
 ?>
