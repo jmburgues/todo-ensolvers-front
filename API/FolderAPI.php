@@ -55,7 +55,7 @@ class FolderAPI{
         return $response;
     }
 
-    public function appendToFolder($idFolder,$idTask){
+    public function appendToFolder($folderId,$idTask){
 
         $options = array('http' =>
         array(
@@ -65,12 +65,12 @@ class FolderAPI{
         );
     
           $context  = stream_context_create( $options );
-          $result = file_get_contents(API_URL."/folder/".$idFolder."/task/".$idTask, false, $context );
+          $result = file_get_contents(API_URL."/folder/".$folderId."/task/".$idTask, false, $context );
           $response = json_decode( $result );
         return $response;
     }
 
-    public function remove($idFolder){
+    public function remove($folderId){
         $options = array('http' =>
         array(
             'method'  => 'DELETE',
@@ -79,7 +79,7 @@ class FolderAPI{
         );
     
           $context  = stream_context_create( $options );
-          $result = file_get_contents(API_URL."/folder/".$idFolder, false, $context );
+          $result = file_get_contents(API_URL."/folder/".$folderId, false, $context );
           $response = json_decode( $result );
         return $response;
     }
