@@ -55,6 +55,21 @@ class TaskAPI{
     return $response;
   }
 
+
+  public function remove($id){
+    $options = array('http' =>
+    array(
+        'method'  => 'DELETE',
+        'header'  => 'Content-type: application/x-www-form-urlencoded'
+        )
+    );
+
+    $context  = stream_context_create( $options );
+    $result = file_get_contents(API_URL."/task/".$id, false, $context );
+    $response = json_decode( $result );
+    return $response;
+  }
+
   public function jsonToObject($json){              
     $tasksObjects = array();
 
@@ -67,6 +82,7 @@ class TaskAPI{
     
     return $tasksObjects;
   }
+
 }
 
 ?>

@@ -75,8 +75,12 @@ class TaskController{
         require_once(VIEWS_PATH."folder.php");
     }
 
-    public function remove($id){
+    public function remove($id,$folderId){
+        $this->TaskAPI->remove($id);
 
+        $folder = $this->FolderAPI->getOne($folderId);
+        $tasks = $folder->getTasks();
+        require_once(VIEWS_PATH."folder.php");
     }
 }
 ?>

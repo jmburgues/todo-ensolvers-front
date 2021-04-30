@@ -7,11 +7,13 @@
       <tr>
         <td><label><input type="checkbox" onclick="javascript:location.href='<?=FRONT_ROOT?>Task/changeStatus/<?=$task->getId()?>/<?=$folder->getId()?>'" <?php if($task->getDone()){ echo "checked"; } ?> > <?=$task->getDescription()?></label></td>
         <td><a href="<?php echo FRONT_ROOT."Task/edit/".$task->getId()."/".$folder->getId()?>">Edit</a></td>
+        <td><a href="<?php echo FRONT_ROOT."Task/remove/".$task->getId()."/".$folder->getId()?>">Remove</a></td>
       </tr>
       <?php } }else{?>
         <tr>
           <td><label><input type="checkbox" <?php if($task->getDone()){ echo "checked"; } ?> > <?=$task->getDescription()?></label></td>
           <td><a href="<?php echo FRONT_ROOT."Task/edit/".$tasks->getId()."/".$folder->getId()?>">Edit</a></td>
+          <td><a href="<?php echo FRONT_ROOT."Task/remove/".$task->getId()."/".$folder->getId()?>">Remove</a></td>
         </tr>
       <?php } ?>
     </table>
