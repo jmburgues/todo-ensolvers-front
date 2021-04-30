@@ -38,6 +38,43 @@ class TaskController{
         require_once(VIEWS_PATH."folder.php");
     }
 
+    public function changeStatus($id,$folderId){
+        $task = $this->TaskAPI->getOne($id);
+        $task->setDone(
+                ($task->getDone() ? false : true)
+            );
+        
+        $data = array();
+        $data["id"] = $task->getId();
+        $data["description"] = $task->getDescription();
+        $data["done"] = $task->getDone();
+  
+        $this->TaskAPI->update($data);
+
+        $folder = $this->FolderAPI->getOne($folderId);
+        $tasks = $folder->getTasks();
+        require_once(VIEWS_PATH."folder.php");    
+    }
+    
+    public function edit($id,$folderId){
+        $task = $this->TaskAPI->getOne($id);
+        require_once(VIEWS_PATH."editTask.php");   
+    }
+
+    public function sendEdit($id, $done, $folderId,$description){
+
+        $data = array();
+        $data["id"] = $id;
+        $data["description"] = $description;
+        $data["done"] = (isset($done)) ? $done : 0;
+
+        $this->TaskAPI->update($data);
+
+        $folder = $this->FolderAPI->getOne($folderId);
+        $tasks = $folder->getTasks();
+        require_once(VIEWS_PATH."folder.php");
+    }
+
     public function remove($id){
 
     }

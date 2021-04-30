@@ -32,7 +32,10 @@ class FolderController{
     }
 
     public function remove($id){
-
+        $this->FolderAPI->remove($id);
+        
+        $folders = $this->FolderAPI->getAll();
+        require_once(VIEWS_PATH."home.php");
     }
 }
 ?>
