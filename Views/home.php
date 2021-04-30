@@ -22,7 +22,7 @@
     <?php }?>
 
   <form class="submit" action="<?=FRONT_ROOT?>Folder/add" method=POST>
-    <input type="text" maxlength="20" name="name" placeholder="New Folder" id="name" required>
+    <input type="text" maxlength="30" name="name" placeholder="New Folder" id="name" required>
     <button>Add</button>
   </form>
 </div>
