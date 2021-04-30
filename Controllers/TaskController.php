@@ -16,7 +16,7 @@ class TaskController{
         $this->FolderAPI = new FolderAPI();
     }
 
-    public function add($idFolder,$description){
+    public function add($folderId,$description){
         $array = array();
         $array["description"] = $description;
 
@@ -25,9 +25,9 @@ class TaskController{
 
         $idTask = str_replace(API_URL."/task/", "", $response["url"]); // get task id by substracting url from response
        
-        $this->FolderAPI->appendToFolder($idFolder,$idTask);
+        $this->FolderAPI->appendToFolder($folderId,$idTask);
 
-        $folder = $this->FolderAPI->getOne($idFolder);
+        $folder = $this->FolderAPI->getOne($folderId);
         $tasks = $folder->getTasks();
         require_once(VIEWS_PATH."folder.php");
     }
