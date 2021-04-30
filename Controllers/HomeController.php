@@ -2,7 +2,6 @@
     namespace Controllers;
     use API\FolderAPI as FolderAPI;
     use API\TaskAPI as TaskAPI;
-    use Models\Task as Task;
 
 class HomeController
     {

@@ -1,5 +1,5 @@
 .folder{
-    border-style: solid;
+    border: 4px grey solid;
     margin: 1% 1% 1% 1%;
     padding: 1% 1% 1% 1%;
     font-family: 'Courier New', Courier, monospace;
