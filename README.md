@@ -6,4 +6,10 @@ ONLINE DEPLOYMENT: You can access its online deployment at: https://todo-ensolve
 
 LOCAL VERSION: Can be runned by clonning master branch and mounting it on apache web server.
 
-Technologies used: Apache/2.4.46 PHP 7.2
+Technologies used: Apache/2.4.46 - PHP 7.2
+
+Docker image aviable at:
+
+https://drive.google.com/file/d/1d57JKa7IWn3dWGwUnK42LY7YwbTns6z6/view?usp=sharing 
+
+download image and loadit with: ' docker load -i <path to image tar file> '
